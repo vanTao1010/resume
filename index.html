@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>万涛 - 前端开发工程师</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .resume-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 30px 40px;
+            position: relative;
+        }
+        
+        .name-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .download-btn {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+        
+        .download-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .basic-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .info-item {
+            display: flex;
+        }
+        
+        .info-label {
+            min-width: 80px;
+            font-weight: bold;
+        }
+        
+        .content {
+            padding: 30px 40px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 22px;
+            color: #1e3c72;
+            border-bottom: 2px solid #1e3c72;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title i {
+            margin-right: 10px;
+        }
+        
+        .skills-list {
+            list-style-type: decimal;
+            margin-left: 20px;
+        }
+        
+        .skills-list li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        
+        .education-item, .experience-item, .project-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+        
+        .education-item:last-child, .experience-item:last-child, .project-item:last-child {
+            border-bottom: none;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .item-title {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .item-date {
+            color: #666;
+        }
+        
+        .item-subtitle {
+            color: #1e3c72;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .item-details {
+            list-style-type: none;
+        }
+        
+        .item-details li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .item-details li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #1e3c72;
+        }
+        
+        .project-tech {
+            background: #f0f5ff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #1e3c72;
+        }
+        
+        .project-link {
+            color: #1e3c72;
+            text-decoration: none;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        
+        .project-link:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 20px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .name-title {
+                font-size: 26px;
+            }
+            
+            .basic-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .download-btn {
+                position: static;
+                margin-top: 15px;
+                justify-content: center;
+            }
+            
+            .item-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <div class="header">
+            <div class="name-title">前端开发-万涛</div>
+            <div class="tagline">前端开发，不止于"实现"，更在于"优化"！</div>
+            
+            <div class="basic-info">
+                <div class="info-item">
+                    <div class="info-label">姓名：</div>
+                    <div class="info-value">万涛</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">性别：</div>
+                    <div class="info-value">男</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">工作年限：</div>
+                    <div class="info-value">5年经验</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">意向城市：</div>
+                    <div class="info-value">深圳</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">联系电话：</div>
+                    <div class="info-value">18708664988</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">出生年月：</div>
+                    <div class="info-value">1995-07</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">籍贯：</div>
+                    <div class="info-value">贵州</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">求职岗位：</div>
+                    <div class="info-value">前端开发</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">入职时间：</div>
+                    <div class="info-value">一周内到岗</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">邮箱：</div>
+                    <div class="info-value">18708664988@163.com</div>
+                </div>
+            </div>
+            
+            <!-- <button class="download-btn" id="downloadPdf">
+                <i class="fas fa-download"></i>
+                下载PDF版本
+            </button> -->
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <div class="section-title">
+                    <i class="fas fa-star"></i>
+                    技能特长
+                </div>
+                <ol class="skills-list">
+                    <li>精通 HTML5、CSS/CSS3 规范，熟练运用 Sass、Less 等预处理器，深入掌握 ES5/ES6 + 语法特性，能高效编写标准化前端代码</li>
+                    <li>熟练掌握 Vue2/Vue3 全家桶（Vue Router、Vuex/Pinia、Composition API 等），具备从 0 到 1 搭建 Vue 项目架构及核心业务开发能力</li>
+                    <li>精通 Webpack、Vite 等构建工具的常用配置与性能优化，能通过工程化手段提升开发效率与项目性能</li>
+                    <li>熟悉erp质量检测系统、PRD扫码和APP等软件开发、rouy框架开发</li>
+                    <li>熟练使用 uni-app框架进行多端开发，能高效实现 H5、小程序、App 的跨端适配与功能统一，具备丰富的混合开发实战经验</li>
+                    <li>深耕大屏可视化领域，擅长通过 Flex/Grid+rem/wv 等方案实现自适应布局，能结合 ECharts/Chart.js 等工具打造高质量数据可视化界面</li>
+                    <li>熟悉阿里云服务器部署，NSIS制作安装包配置流程</li>
+                    <li>了解 Node.js 服务端配置及生态工具，能独立完成基础接口开发与服务部署</li>
+                    <li>接手了解 Qt 项目开发，具备跨技术栈协作与实现能力</li>
+                </ol>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">
+                    <i class="fas fa-graduation-cap"></i>
+                    教育背景
+                </div>
+                <div class="education-item">
+                    <div class="item-header">
+                        <div class="item-title">六盘水师范学院</div>
+                        <div class="item-date">2014-09 ~ 2018-06</div>
+                    </div>
+                    <div class="item-subtitle">计算机科学与技术（本科）</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">
+                    <i class="fas fa-briefcase"></i>
+                    工作经验
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div class="item-title">深圳信达科技技术有限公司</div>
+                        <div class="item-date">2024-06 ~ 至今</div>
+                    </div>
+                    <div class="item-subtitle">前端开发工程师</div>
+                    <ul class="item-details">
+                        <li>独立开发信达控制管理平台，负责前端架构设计与核心功能实现，保障信息发布流程的高效管控</li>
+                        <li>主导信达控制相关 uniApp 开发，适配多端场景，优化信息发布终端的交互体验与响应速度</li>
+                        <li>负责系统集成 UniApp 项目全流程开发，基于跨域技术实现实时数据模块，提升用户使用体验</li>
+                        <li>参与 Qt 项目的全面开发，完成单口数据获取及界面优化调整</li>
+                        <li>负责 nsis 安装包配置与定制化开发，优化软件部署流程，提升用户安装效率与成功率</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div class="item-title">深圳鸿合科技技术有限责任公司</div>
+                        <div class="item-date">2022-10 ~ 2024-06</div>
+                    </div>
+                    <div class="item-subtitle">软件开发工程师</div>
+                    <ul class="item-details">
+                        <li>主导新项目从 0 到 1 搭建，主导需求拆解与技术栈选型，制定开发规范，确保项目高效启动并奠定可扩展架构基础</li>
+                        <li>针对迭代项目实施代码重构与性能优化，通过模块化设计、帧加载策略等提升代码质量 30%+，解决跨浏览器兼容、大数据渲染等核心技术难题</li>
+                        <li>深度参与需求分析，结合业务目标制定阶段性开发计划，通过里程碑管理与风险预测，保障项目按期交付率 100%</li>
+                        <li>作为核心开发与团队协作，通过 Git Flow 规范协作流程，参与 Code Review 与技术方案研讨，共同保障项目进度与交付质量</li>
+                        <li>负责编写并维护技术文档（含 API 手册、架构设计图、开发指南），形成可复用知识库，支撑团队高效协作与项目迭代</li>
+                        <li>参与全流程测试，提前发现并修复潜在问题，保障线上稳定性</li>
+                        <li>持续研究前端新技术，为项目降本增效提供技术支撑</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div class="item-title">广东金朗教育信息科技有限公司</div>
+                        <div class="item-date">2020-06 ~ 2022-09</div>
+                    </div>
+                    <div class="item-subtitle">前端开发工程师</div>
+                    <ul class="item-details">
+                        <li>深度对接产品团队梳理需求，主导需求点转化为可视化思维导图，参与 PRD 文档进行技术可行性检验与细节完善，为开发提供精准依据</li>
+                        <li>协同设计团队就定界面视觉风格与交互规范，结合技术实现评估开发周期，制定合理里程碑节点</li>
+                        <li>主导技术选型与项目搭建，确定基于 Vue2+vue-router+vuex+axios+ElementUI 的技术栈架构，搭建基础开发环境与工程化配置</li>
+                        <li>设计并实现动态路由机制，封装权限控制指令，实现页面级与按钮级的精细化权限管理，保障系统访问安全</li>
+                        <li>基于 ECharts 开发首页数据可视化模块，实现多维度数据动态展示与交互分析，支撑业务决策</li>
+                        <li>开发设备管理模块，通过硬件通信协议对接实现大屏远程连接与操控功能，保障设备远程运维能力</li>
+                        <li>设计集控管理核心功能，实现多类型指令的封装与发送机制，支持批量设备统一管控</li>
+                        <li>开发资源管理模块的数据导出与打印功能，支持 Excel/PDF 多格式导出，优化数据归档效率</li>
+                        <li>实现日志与人员管理模块，设计操作数据可视化展示界面，集成数据导出功能，满足审计与管理需求</li>
+                        <li>对全局状态与接口数据进行标准化封装，设计可复用数据处理工具类，提升代码复用率与后续迭代效率</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">
+                    <i class="fas fa-project-diagram"></i>
+                    项目经验
+                </div>
+                
+                <div class="project-item">
+                    <div class="project-tech">技术架构：uniapp + uv-ui + uni.request + sass+movable-area</div>
+                    <div class="item-header">
+                        <div class="item-title">XDS信发控制APP</div>
+                        <div class="item-subtitle">深圳信达科技技术有限公司</div>
+                    </div>
+                    <div class="item-details">
+                        <div><strong>项目描述：</strong>设置广告节目投放到终端播放。</div>
+                        <div><strong>项目地址：</strong>AppStore搜索XDS信发控制。</div>
+                        <div><strong>职责描述：</strong></div>
+                        <ul class="item-details">
+                            <li>主导应用基础框架搭建，设计前端架构与工程化配置，奠定高可扩展、易维护的技术基础</li>
+                            <li>独立开发 UDP 寻机功能模块，实现设备自动发现与连接机制，优化设备配对效率</li>
+                            <li>负责核心业务模块开发，使用movable-area组件实现节目编辑、审核、下发全流程管理功能，保障内容发布链路流畅</li>
+                            <li>独立完成 iOS 版本开发与上架全流程，处理苹果生态适配问题，确保应用顺利通过 App Store 审核</li>
+                            <li>负责与平台端的数据接口对接，设计数据交互规范与容错机制，保障跨端数据通信稳定可靠</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="project-item">
+                    <div class="project-tech">技术架构：Vue + Element ui + Vuex+vue-deag-resize + Axios + Sass+ Webpack</div>
+                    <div class="item-header">
+                        <div class="item-title">XDS信息发布管理平台</div>
+                        <div class="item-subtitle">深圳信达科技技术有限公司</div>
+                    </div>
+                    <div class="item-details">
+                        <div><strong>项目描述：</strong>项目主要提供给客户通过平台编辑节目广告，投放到绑定的终端上播放。</div>
+                        <div><strong>项目地址：</strong><a href="http://xdsadv.top:91/admin/?#/login" class="project-link" target="_blank">http://xdsadv.top:91/admin/?#/login</a></div>
+                        <div><strong>职责描述：</strong></div>
+                        <ul class="item-details">
+                            <li>基于 Node.js环境集成Frmpeg工具链，开发媒体流全流程处理模块，实现文件上传、分屏切割与实时播放等核心功能，支撑多媒体业务场景落地</li>
+                            <li>基于 Element UI组件库搭建标准化页面架构，根据业务需求二次封装专用组件，提升界面一致性与开发效率</li>
+                            <li>深度封装Axios请求库，实现请求/响应控制器与统一错误处理机制，简化接口调用逻辑，使维护成本降低40%</li>
+                            <li>设计并封装弹窗、消息提示、Switch等通用组件库，通过可配置参数实现定制化需求，代码复用率提升50%，加速迭代效率</li>
+                            <li>使用vue-deag-resize 实现编辑广告节目核心功能，达到可移动配置实现不同广告位展示效果</li>
+                            <li>通过frmpeg方法实现自定义切割视频分屏播放</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="project-item">
+                    <div class="project-tech">技术架构：uniapp + uv-ui + uni.request + sass</div>
+                    <div class="item-header">
+                        <div class="item-title">亲友集APP</div>
+                    </div>
+                    <div class="item-details">
+                        <div><strong>项目描述：</strong>云端科技定制开发，连接设备后发送视频图片文件到设备并能遥控设备。</div>
+                        <div><strong>职责描述：</strong></div>
+                        <ul class="item-details">
+                            <li>独立开发UDP与HTTP双协议连接模块，实现设备多通道通信机制，保障网络环境适应性与数据传输稳定性</li>
+                            <li>负责安卓版本核心功能开发，实现扫码快速配置WiFi连接及WiFi通话管理功能，优化设备联网操作体验</li>
+                            <li>设计UDP长连接保洁机制，通过心跳检测与自动重连策略，确保设备持续在线率达99.5%以上</li>
+                            <li>开发远程遥控功能模块，封装指令传输协议与交互逻辑，实现低延迟设备远程操控，响应速度提升至200ms内</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="project-item">
+                    <div class="project-tech">技术架构：Vue + Element ui + Vuex+Router+ Axios + Sass+ Webpack</div>
+                    <div class="item-header">
+                        <div class="item-title">Remote Device Management（简称为 RDM）集控平台</div>
+                    </div>
+                    <div class="item-details">
+                        <div><strong>项目描述：</strong>通过 web 端统一管理系统，提升终端管理者处理设备问题效率，可同时处理多地设备终端。</div>
+                        <div><strong>项目地址：</strong><a href="http://rdmtest.interactivepro-webservice.com/login" class="project-link" target="_blank">http://rdmtest.interactivepro-webservice.com/login</a></div>
+                        <div><strong>职责描述：</strong></div>
+                        <ul class="item-details">
+                            <li>基于基于开源Ruoy开源框架搭建项目基础架构，快速部署后台系统核心功能，为业务模块开发提供稳定支撑</li>
+                            <li>设计并实现角色权限控制系统，开发品牌基础信息管理模块，通过精细化权限划分保障数据安全</li>
+                            <li>开发动态路由机制并封装权限指令，实现页面与按钮级别的精准权限控制，满足多角色访问需求</li>
+                            <li>基于EChats开发首款数据可视化看板，实现业务数据多维度动态展示，助力业务决策分析</li>
+                            <li>开发设备管理模块并对接硬件硬件通信协议对接，实现大屏远程连接与操控功能，支持设备远程运维场景</li>
+                            <li>设计集控管理核心功能，实现多类型指令的封装与批量发送机制，提升设备集群管控效率</li>
+                            <li>开发资源管理模块的数据导出与打印功能，支持多格式文件导出，优化数据归档与流转效率</li>
+                            <li>实现日志与人员管理模块，设计操作数据可视化展示界面并集成导出功能，满足业务审计需求</li>
+                            <li>对全局状态与接口数据进行标准化封装，设计可复用工具类，提升代码复用率与后续迭代效率</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="project-item">
+                    <div class="project-tech">技术架构：uniapp + uv-ui + uni.request + sass</div>
+                    <div class="item-header">
+                        <div class="item-title">万宝至扫码检验APP</div>
+                    </div>
+                    <div class="item-details">
+                        <div><strong>项目描述：</strong>提供给前线使用扫码检查的客户，使用扫码检对检验单进行检验，打印等操作。</div>
+                        <div><strong>项目职责：</strong></div>
+                        <ul class="item-details">
+                            <li>使用h5+App搭建App项目，适配提供的PDA扫码检设备</li>
+                            <li>串口调试加HTTP协议调试设备采集数据进行检验</li>
+                            <li>扫码或者检验单数据，通过unip设置Bluetooth蓝牙api连接标签打印实现打印二维码及检验单信息</li>
+                            <li>通过提供扫码检设备安装使用</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('downloadPdf').addEventListener('click', function() {
+            // 创建一个虚拟链接来下载PDF文件
+            const link = document.createElement('a');
+            link.href = '万涛的简历.pdf'; // 这里应该是您PDF文件的实际路径
+            link.download = '万涛-前端开发工程师-简历.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // 如果PDF文件不存在，显示提示信息
+            setTimeout(function() {
+                alert('如果下载没有自动开始，请确保PDF文件"万涛的简历.pdf"与HTML文件在同一目录下。');
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
